@@ -5,11 +5,13 @@ import { ConfigModule } from '@nestjs/config';
 import { GoogleStrategy } from './utils/GoogleStrategy';
 import { AuthService } from './auth.service';
 import { User } from 'src/typeorm/entities/User';
+import { SessionSerializer } from './utils/Serializer';
 
 @Module({
   controllers: [AuthController],
   providers: [
     GoogleStrategy,
+    SessionSerializer,
     {
       provide: 'AUTH_SERVICE',
       useClass: AuthService,
