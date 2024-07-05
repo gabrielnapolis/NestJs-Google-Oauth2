@@ -1,19 +1,20 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
 import { Request } from 'express';
 import { GoogleAuthGuard } from './utils/Guards';
+import { FacebookStrategy } from './utils/FacebookStrategy';
 
 @Controller('auth')
 export class AuthController {
   @Get('google/login')
   @UseGuards(GoogleAuthGuard)
-  handleLogin() {
+  handleLoginGoogle() {
     return { msg: 'Google Authentication' };
   }
 
-  // api/auth/google/redirect
+  // auth/google/redirect
   @Get('google/redirect')
   @UseGuards(GoogleAuthGuard)
-  handleREdirect() {
+  handleRedirectGoogle() {
     return { msg: 'OK' };
   }
 
@@ -26,4 +27,18 @@ export class AuthController {
       return { msg: 'Not Authenticated'};
     }
   }
+
+  @Get('facebook/login')
+  @UseGuards(FacebookStrategy)
+  handleLoginFB() {
+    return { msg: 'Facebook Authentication' };
+  }
+
+  // auth/google/redirect
+  @Get('facebook/redirect')
+  @UseGuards(FacebookStrategy)
+  handleRedirectFB() {
+    return { msg: 'OK' };
+  }
+
 }
