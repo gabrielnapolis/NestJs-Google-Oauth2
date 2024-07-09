@@ -25,16 +25,16 @@ JWT (JSON Web Tokens): Método de representação de informações de forma segu
 
 1. Clone o repositório:
 
-  https://github.com/gabrielnapolis/NestJs-Google-Oauth2
+    https://github.com/gabrielnapolis/NestJs-Google-Oauth2
 
 2. Instale as dependências:
 
-  cd NestJs-Google-Oauth2
+    cd NestJs-Google-Oauth2
 
-  npm i
+    npm i
 
 3. Configure as variáveis de ambiente (veja o arquivo .env.example para referência).
 
 4. Inicie a aplicação
 
-  npm run start
+    npm run start
